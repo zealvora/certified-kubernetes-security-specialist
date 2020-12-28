@@ -21,6 +21,7 @@ aa-status
 #### Sample YAML File based on Host PID:
 ```sh
 cd /root/apparmor
+```
 ```sh
 nano hello-armor.yaml
 ```sh

@@ -2,7 +2,7 @@
 
 This is a central document which contains all the commands and code files used throughout the video course.
 
-# Exam Domains
+# Video-Document Mapper
 
 | Domain | Document Link |
 | ------ | ------ |
