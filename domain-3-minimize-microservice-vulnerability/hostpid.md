@@ -1,0 +1,68 @@
+
+#### Sample YAML File based on Host PID:
+```sh
+nano host-pid.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpid
+spec:
+  hostPID: true
+  containers:
+  - image: busybox
+    name: demo-pod
+    command:
+      - sleep
+      - "3600"
+```
+```sh
+kubectl apply -f host-pid.yaml
+```
+#### Create Sample Pods:
+```sh
+kubectl run httpd-pod-1 --image=httpd
+kubectl run httpd-pod-2 --image=httpd
+```
+#### Connect to hostpid POD:
+```sh
+kubectl exec -it hostpid -- sh
+ps -ef | grep httpd
+kill -9 PID && kill -9 PID
+```
+#### Improved Pod Security Policy:
+```sh
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: restrictive-psp
+  annotations:
+    seccomp.security.alpha.kubernetes.io/allowedProfileNames: '*'
+spec:
+  privileged: false
+  allowPrivilegeEscalation: true
+  allowedCapabilities:
+  - '*'
+  volumes:
+  - configMap
+  -  downwardAPI
+  -  emptyDir
+  -  persistentVolumeClaim
+  -  secret
+  -  projected
+  hostNetwork: true
+  hostPorts:
+  - min: 0
+    max: 65535
+  hostIPC: true
+  hostPID: true
+  runAsUser:
+    rule: 'RunAsAny'
+  seLinux:
+    rule: 'RunAsAny'
+  supplementalGroups:
+    rule: 'RunAsAny'
+  fsGroup:
+    rule: 'RunAsAny'
+```

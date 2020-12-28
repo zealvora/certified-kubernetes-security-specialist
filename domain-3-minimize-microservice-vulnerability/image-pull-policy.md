@@ -1,0 +1,45 @@
+### Hello-World Docker Hub Repository:
+
+https://hub.docker.com/_/hello-world
+
+#### Create a Dockerfile:
+```sh
+mkdir /root/image-policy
+```
+```sh
+nano Dockerfile
+FROM ubuntu:latest
+CMD ["sleep","3600"]
+```
+```sh
+docker build -t hello-world:latest .
+```
+#### Verify with default image pull policy:
+```sh
+kubectl run hello-world --image=hello-world:latest
+kubectl logs hello-world
+docker images
+kubectl delete pod hello-world
+docker rmi hello-world:latest
+docker tag [UBUNTU-IMAGE-ID] hello-world:latest
+```
+#### POD Manifest:
+```sh
+nano hello-world.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: hello-world
+  name: hello-world-new
+spec:
+  containers:
+  - image: hello-world
+    name: hello-world
+    imagePullPolicy: IfNotPresent
+```
+```sh
+kubectl apply hello-world.yaml
+```

