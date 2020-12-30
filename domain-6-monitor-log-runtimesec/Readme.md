@@ -23,4 +23,4 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
    [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/audit-log-detailed.md>
 
-      [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/immutability.md>
+   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/immutability.md>
