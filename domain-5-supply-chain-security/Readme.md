@@ -15,4 +15,4 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/trivy.md>
    [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/kube-bench.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/static-analysis.md>
+   [PlDc]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/static-analysis.md>
