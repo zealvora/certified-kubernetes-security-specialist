@@ -13,7 +13,7 @@ spec:
   containers:
   - name: ubuntu
     image: ubuntu
-    command: [ sleep 1h" ]
+    command: ["sleep","3600"]
     securityContext:
       readOnlyRootFilesystem: true
 ```
