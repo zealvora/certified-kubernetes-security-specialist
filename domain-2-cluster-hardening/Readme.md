@@ -25,5 +25,5 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
    [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/ingress-security.md>
 
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/service-account.md>
+   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/sa-security.md>
    [PlDg]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/kubeadm-version.md>

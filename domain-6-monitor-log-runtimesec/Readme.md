@@ -12,6 +12,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 3 | [Creating Custom Falco Rules][PlDc]
 | 4 | [Falco Rule Writing - Exam Perspective][PlDd]
 | 5 | [Audit Logging][PlDe] |
+| 6 | [Container Immutability][PlDf] |
 
 
 
@@ -21,3 +22,5 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDd]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/falco-exam-perspective.md>
 
    [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/audit-log-detailed.md>
+
+      [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/immutability.md>
