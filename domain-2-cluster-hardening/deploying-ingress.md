@@ -31,7 +31,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: example-service
+            name: example-svc
             port:
               number: 80
 ```
