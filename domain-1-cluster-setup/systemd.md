@@ -27,7 +27,7 @@ EOF
 ```
 ```sh
 systemctl start etcd
-systemctl enable kube-apiserver
+systemctl enable etcd
 ```
 ####  systemd file for kube-apiserver:
 ```sh
