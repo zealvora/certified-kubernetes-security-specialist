@@ -17,7 +17,7 @@ openssl x509 -req -in alice.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out al
 ```
 #### Step 2 Set ClientCA flag:
 ```sh
---client-ca /root/certificates/ca.crt
+--client-ca-file /root/certificates/ca.crt
 ```
 ```sh
 systemctl daemon-reload
