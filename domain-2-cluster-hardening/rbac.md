@@ -1,6 +1,6 @@
   #### Explore the API Groups:
 ```sh
-kubectl --proxy 8085
+kubectl proxy --port 8085
 ```
 ```sh
 curl localhost:8085
