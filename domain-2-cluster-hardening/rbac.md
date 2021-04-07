@@ -59,9 +59,11 @@ kubectl describe rolebinding read-pods
 ```sh
 su - john
 kubectl get pods
+kubectl run john-pod --image=nginx
 kubectl exec -it john-pod -- bash
   ```
   #### Step 4 Verify API Access Action:
 ```sh
 kubectl auth can-i create deployments
+kubectl auth can-i create pods
 ```
