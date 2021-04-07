@@ -2,11 +2,13 @@
 #### Get the list of service accounts:
 ```sh
 kubectl get sa
+kubectl get secret
 ```
 #### Service Accounts are created automatically when namespace is created:
 ```sh
 kubectl create namespace kplabs
 kubectl get sa -n kplabs
+kubectl get secret -n kplabs
 ```
 #### Verify SA Token Mount in Pods:
 ```sh
