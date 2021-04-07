@@ -16,9 +16,11 @@ kubectl run nginx --image=nginx
 kubectl exec -it nginx -- bash
 cd /run/secrets/kubernetes.io/serviceaccount
 cat token
+kubectl get pod nginx -o yaml
 ```
 #### Create POD with custom service account:
 ```sh
 kubectl create sa kplabs
 kubectl run nginx-sa --image=nginx --serviceaccount="kplabs"
+kubectl get pod nginx-sa -o yaml
 ```
