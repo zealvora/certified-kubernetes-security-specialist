@@ -1,13 +1,10 @@
 #### Documentation Link:
 
-https://github.com/etcd-io/etcd/releases/tag/v3.4.10
+https://github.com/etcd-io/etcd/releases/tag/v3.5.4
 
 #### Pre-Requisite:
 ```sh
-sudo su -
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-yum -y install wget
+apt-get -y install wget
 ```
 #### Step 1: Copy the ETCD and ETCDCTL Binaries to the Path
 ```sh
