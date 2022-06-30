@@ -1,7 +1,7 @@
 
 #### Step 1 - Create Nginx Pod:
 ```sh
-kubectl run example-pod --image=nginx --dry-run=client -o yaml -l=app=nginx
+kubectl run example-pod --image=nginx -l=app=nginx
 ```
 #### Step 2 - Create Service:
 ```sh
