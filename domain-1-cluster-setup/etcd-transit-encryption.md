@@ -4,7 +4,15 @@
 cd /root/certificates
 openssl genrsa -out etcd.key 2048
 ```
-#### Step 2 - Creating Configuration for ETCD CSR:
+#### Step 2 - Find the IP of your server
+
+```sh
+yum -y install net-tools
+ifconfig
+```
+
+
+#### Step 3 - Creating Configuration for ETCD CSR:
 ```sh
 cat > etcd.cnf <<EOF
 [req]
@@ -20,7 +28,7 @@ IP.1 = [IP-1]
 IP.2 = 127.0.0.1
 EOF
 ```
-#### Step 3 - Creating CSR:
+#### Step 4 - Creating CSR:
 ```sh
 openssl req -new -key etcd.key -subj "/CN=etcd" -out etcd.csr -config etcd.cnf
 ```

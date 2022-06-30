@@ -15,4 +15,6 @@ etcd --cert-file=/root/certificates/etcd.crt --key-file=/root/certificates/etcd.
 #### Step 3 - Authenticate with Certificates:
 ```sh
 ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert /root/certificates/client.crt --key /root/certificates/client.key put course "kplabs is awesome!"
+
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert /root/certificates/client.crt --key /root/certificates/client.key get course
 ```
