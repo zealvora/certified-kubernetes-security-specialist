@@ -2,10 +2,6 @@
 
 https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 
-#### Pre-Requisite:
-```sh
-yum -y install openssl
-```
 #### Step 1 Creating Certificate for Alice:
 ```sh
 cd /root/certificates
