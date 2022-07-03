@@ -1,3 +1,7 @@
+#### Documentation Referred:
+
+https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+
 ##### Step 1: Create a new secret
 ```sh
 kubectl create secret generic new-secret -n default --from-literal=user=secretpassword --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
@@ -58,7 +62,7 @@ systemctl status kube-apiserver
 ```
 #### Step 7 - Create a new Secret
 ```sh
-kubectl create secret generic new-secret -n default --from-literal=dbadmin=dbpasswd --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
+kubectl create secret generic db-secret -n default --from-literal=dbadmin=dbpasswd --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
 ```
 ```sh
 kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
@@ -67,9 +71,9 @@ kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/ce
 
 ```sh
 cd /root/certificates
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert ./apiserver.crt --key ./apiserver.key get /registry/secrets/default/new-secret | hexdump -C
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert ./apiserver.crt --key ./apiserver.key get /registry/secrets/default/db-secret | hexdump -C
 ```
 ```sh
 cd /var/lib/etcd
-grep -R "secretpassword" .
+grep -R "dbpasswd" .
 ```

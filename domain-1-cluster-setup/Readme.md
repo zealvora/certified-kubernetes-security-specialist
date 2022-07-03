@@ -17,13 +17,13 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 8 | [Static Token Authentication][PlDh] |
 | 9 | [Downsides - Static Token Authentication][PlDi] |
 | 10 | [Implementing X509 Client Authentication][PlDj] |
-| 11 | [Encryption Providers][PlDk] |
-| 9 | [Authorization][PlDl] |
-| 10 | [Implementing Auditing][PlDm] |
-| 12 | [Setting up kubeadm cluster][PlDn] |
-| 13 | [Revising Taints and Tolerations][PlDo] |
-| 14 | [Kubelet Security][PlDp] |
-| 15 | [Verifying Platform Binaries][PlDq] |
+| 11 | [Authorization][PlDk] |
+| 12 | [Encryption Providers][PlDl] |
+| 13 | [Implementing Auditing][PlDm] |
+| 14 | [Setting up kubeadm cluster][PlDn] |
+| 15 | [Revising Taints and Tolerations][PlDo] |
+| 16 | [Kubelet Security][PlDp] |
+| 17 | [Verifying Platform Binaries][PlDq] |
 
 
 
@@ -37,8 +37,8 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDh]: <./token-authentication.md>
    [PlDi]: <./downside-token-auth.md>
    [PlDj]: <./certificate-auth-k8s.md>
-   [PlDk]: <./encryption-provider.md>
-   [PlDl]: <./authorization.md>
+   [PlDk]: <./authorization.md>
+   [PlDl]: <./encryption-provider.md>
    [PlDm]: <./audit-logs.md>
    [PlDn]: <./kubeadm.md>
    [PlDo]: <./taint>
