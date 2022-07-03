@@ -1,9 +1,9 @@
 ##### Step 1: Create a new secret
 ```sh
-kubectl create secret generic new-secret -n default --from-literal=user=secretpassword --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
+kubectl create secret generic new-secret -n default --from-literal=user=secretpassword --server=https://127.0.0.1:6443 --client-certificate /root/certificates/bob.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/bob.key
 ```
 ```sh
-kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
+kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/certificates/bob.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/bob.key
 ```
 
 ##### Step 2: Find the Secret in ETCD in Plain-Text
@@ -58,10 +58,10 @@ systemctl status kube-apiserver
 ```
 #### Step 7 - Create a new Secret
 ```sh
-kubectl create secret generic new-secret -n default --from-literal=dbadmin=dbpasswd --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
+kubectl create secret generic new-secret -n default --from-literal=dbadmin=dbpasswd --server=https://127.0.0.1:6443 --client-certificate /root/certificates/bob.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/bob.key
 ```
 ```sh
-kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/certificates/alice.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/alice.key
+kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/certificates/bob.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/bob.key
 ```
 ##### Step 8: Verify if you can find secret 
 
