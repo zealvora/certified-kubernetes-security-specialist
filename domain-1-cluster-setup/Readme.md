@@ -11,40 +11,36 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 2 | [Overview of Certificate Authority][PlDb] |
 | 3 | [In-Transit Encryption with HTTPS][PlDc]
 | 4 | [Client Authentication in ETCD][PlDd] |
-| 5 | [API Server Security Guidelines][PlDe] |
-| 6 | [Data Encryption at ETCD][PlDf] |
-| 7 | [Transpot Security for API Server][PlDg] |
-| 8 | [Integration with systemd][PlDh] |
-| 9 | [Access Control][PlDi] |
+| 5 | [Integrating Systemd with ETCD][PlDe] |
+| 6 | [Configuring API Server][PlDf] |
+| 7 | [Transport Security for API Server][PlDg] |
+| 8 | [Static Token Authentication][PlDh] |
+| 9 | [Downsides - Static Token Authentication][PlDi] |
 | 10 | [Implementing X509 Client Authentication][PlDj] |
-| 11 | [RBAC Authorization][PlDk] |
-| 12 | [Implementing Auditing][PlDl] |
-| 13 | [Setting up kubeadm cluster][PlDm] |
-| 14 | [Revising Taints and Tolerations][PlDn] |
-| 15 | [Kubelet Security][PlDo] |
-| 16 | [Verifying Platform Binaries][PlDp] |
+| 11 | [Encryption Providers][PlDk] |
+| 9 | [Authorization][PlDl] |
+| 10 | [Implementing Auditing][PlDm] |
+| 12 | [Setting up kubeadm cluster][PlDn] |
+| 13 | [Revising Taints and Tolerations][PlDo] |
+| 14 | [Kubelet Security][PlDp] |
+| 15 | [Verifying Platform Binaries][PlDq] |
 
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/install-etcd.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/configure-ca.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/etcd-transit-encryption.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/etcd-client-auth.md>
-
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/apiserver-secure-01.md>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/apiserver-encryption.md>
-   [PlDg]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/apiserver-intransit-encryption.md>
-   [PlDh]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/systemd.md>
-   [PlDi]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/authentication.md>
-   [PlDj]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/certificate-auth-k8s.md>
-   [PlDk]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/rbac-authorization.md>
-
- [PlDl]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/audit-logs.md>
-
- [PlDm]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/kubeadm.md>
-
- [PlDn]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/taint.md>
-
-
-  [PlDo]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/kubelet-security.md >
-  [PlDp]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-1-cluster-setup/verify-binaries.md>
+   [PlDa]: <./install-etcd.md>
+   [PlDb]: <./configure-ca.md>
+   [PlDc]: <./etcd-transit-encryption.md>
+   [PlDd]: <./etcd-client-auth.md>
+   [PlDe]: <./etcd-systemd.md>
+   [PlDf]: <./configure-apiserver.md>
+   [PlDg]: <./apiserver-transit-encryption.md>  
+   [PlDh]: <./token-authentication.md>
+   [PlDi]: <./downside-token-auth.md>
+   [PlDj]: <./certificate-auth-k8s.md>
+   [PlDk]: <./encryption-provider.md>
+   [PlDl]: <./authorization.md>
+   [PlDm]: <./audit-logs.md>
+   [PlDn]: <./kubeadm.md>
+   [PlDo]: <./taint>
+   [PlDp]: <./kubelet-security.md >
+   [PlDq]: <.//verify-binaries.md>

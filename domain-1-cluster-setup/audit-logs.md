@@ -1,3 +1,6 @@
+#### Reference Websites:
+
+https://jsonformatter.curiousconcept.com/#
 
 #### Step 1 - Create Sample Audit Policy File:
 ```sh
@@ -12,18 +15,22 @@ rules:
 
 #### Step 2 - Audit Configuration:
 ```sh
---audit-policy-file=/root/certificates/logging.yaml \
---audit-log-path=/var/log/api-audit.log \
---audit-log-maxage=30 \
---audit-log-maxbackup=10 \
---audit-log-maxsize=100 \
+nano /etc/systemd/system/kube-apiserver.service
 ```
-
-#### Step 3: Verification
+```sh
+--audit-policy-file=/root/certificates/logging.yaml --audit-log-path=/var/log/api-audit.log --audit-log-maxage=30  --audit-log-maxbackup=10  --audit-log-maxsize=100 
+```
 ```sh
 systemctl daemon-reload
 systemctl restart kube-apiserver
-less /var/log/api-audit.log
+```
+#### Step 3 Run Some Queries using Bob user
+
+```sh
+kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/certificates/bob.crt --certificate-authority /root/certificates/ca.crt --client-key /root/certificates/bob.key
+```
+#### Step 4: Verification
+```sh
 cd /var/log
 grep -i bob api-audit.log
 ```

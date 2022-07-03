@@ -15,7 +15,7 @@ Dem0Passw0rd#,bob,01,admins
 nano /etc/systemd/system/kube-apiserver.service
 ```
 ```sh
---token-auth-file /root/token.csv \
+--token-auth-file /root/token.csv
 ```
 ```sh
 systemctl daemon-reload

@@ -2,20 +2,20 @@
 
 https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 
-#### Pre-Requisite:
-```sh
-yum -y install openssl
-```
 #### Step 1 Creating Certificate for Alice:
 ```sh
 cd /root/certificates
 ```
 ```sh
 openssl genrsa -out alice.key 2048
-openssl req -new -key alice.key -subj "/CN=alice/O=admins" -out alice.csr
+openssl req -new -key alice.key -subj "/CN=alice/O=developers" -out alice.csr
 openssl x509 -req -in alice.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out alice.crt -days 1000
 ```
-#### Step 2 Set ClientCA flag:
+#### Step 2 Set ClientCA flag in API Server:
+
+```sh
+nano /etc/systemd/system/kube-apiserver.service
+```
 ```sh
 --client-ca-file /root/certificates/ca.crt
 ```
