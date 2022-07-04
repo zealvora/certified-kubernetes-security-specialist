@@ -29,8 +29,6 @@ metadata:
   name: default-deny-ingress
 spec:
   podSelector: {}
-  ingress:
-  - {}
   policyTypes:
   - Ingress
 ```
@@ -45,8 +43,8 @@ kubectl exec -it pod-1 -- ping [pod2-ip]
 kubectl exec -it pod-1 -- ping [pod3-ip]
 kubectl exec -it pod-1 -- ping google.com
 
-kubectl exec -it pod-3 -- ping [pod1-ip]
-kubectl exec -it pod-3 -- ping [pod2-ip]
+kubectl exec -n external -it pod-3 -- ping [pod1-ip]
+kubectl exec -n external -it pod-3 -- ping [pod2-ip]
 ```
 ```sh
 kubectl delete -f netpol.yaml
@@ -74,8 +72,8 @@ spec:
 kubectl apply -f netpol.yaml
 ```
 ```sh
-kubectl exec -it pod-3 -- ping [pod1-ip]
-kubectl exec -it pod-3 -- ping [pod2-ip]
+kubectl exec -n external -it pod-3 -- ping [pod1-ip]
+kubectl exec -n external -it pod-3 -- ping [pod2-ip]
 ```
 ```sh
 kubectl delete -f netpol.yaml
