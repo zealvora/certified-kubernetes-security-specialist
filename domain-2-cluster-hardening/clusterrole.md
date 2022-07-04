@@ -52,6 +52,7 @@ kubectl apply -f clusterrolebinding.yaml
 ```sh
 su - john
 kubectl run john-pod-dev --image=nginx -n development
+kubectl exec -it -n development john-pod-dev -- bash
 ```
 #### Step 4 - RoleBinding to ClusterRole:
 ```sh
@@ -77,4 +78,5 @@ roleRef:
 ```
 ```sh
 kubectl apply -f rolebind-cluster.yaml
+kubectl exec -it -n development john-pod-dev -- bash
 ```
