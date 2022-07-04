@@ -4,12 +4,11 @@
 
   #### Step 1 - Download Binaries:
   ```sh
-  wget https://github.com/kubernetes/kubernetes/releases/download/v1.18.12/kubernetes.tar.gz
+ wget https://dl.k8s.io/v1.24.2/kubernetes-server-linux-amd64.tar.gz
   ```
 
   #### Step 2 - Verify the Message Digest:
   ```sh
   apt install hashalot
-  sha256 kubernetes.tar.gz
-  sha512sum kubernetes.tar.gz
+  sha512sum kubernetes-server-linux-amd64.tar.gz
   ```
