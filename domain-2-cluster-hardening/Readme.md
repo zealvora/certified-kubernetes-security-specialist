@@ -12,9 +12,9 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 3 | [ClusterRole and ClusterRoleBinding][PlDc]
 | 4 | [Creating Ingress and Ingress Controller][PlDd]
 | 4 | [Ingress Security][PlDe] |
-| 5 | [Overview of Service Accounts][PlDe] |
-| 6 | [Service Account Security][PlDf] |
-| 7 | [Upgrading kudeadm Clusters][PlDg] |
+| 5 | [Overview of Service Accounts][PlDf] |
+| 6 | [Service Account Security][PlDg] |
+| 7 | [Upgrading kudeadm Clusters][PlDh] |
 
 
 
@@ -24,6 +24,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDd]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/deploying-ingress.md>
 
    [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/ingress-security.md>
+   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/service-account.md>
 
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/sa-security.md>
-   [PlDg]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/kubeadm-version.md>
+   [PlDg]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/sa-security.md>
+   [PlDh]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-2-cluster-hardening/kubeadm-version.md>
