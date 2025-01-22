@@ -24,8 +24,9 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 15 | [Revising Taints and Tolerations][PlDo] |
 | 16 | [Kubelet Security][PlDp] |
 | 17 | [Verifying Platform Binaries][PlDq] |
-
-
+| 16 | [Kubelet Security][PlDp] |
+| 17 | [Practical - Ingress Resource][PlDq] |
+| 18 | [Practical - Ingress Controller][PlDq] |
 
    [PlDa]: <./install-etcd.md>
    [PlDb]: <./configure-ca.md>
@@ -41,6 +42,9 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDl]: <./encryption-provider.md>
    [PlDm]: <./audit-logs.md>
    [PlDn]: <./kubeadm.md>
-   [PlDo]: <./taint.md>
+   [PlDo]: <./taint-toleration.md>
    [PlDp]: <./kubelet-security.md >
-   [PlDq]: <.//verify-binaries.md>
+   [PlDq]: <./verify-binaries.md>
+   [PlDr]: <./ingress.md >
+   [PlDs]: <./ingress-controller.md>
+   [PlDt]: <./ingress-security.md>
