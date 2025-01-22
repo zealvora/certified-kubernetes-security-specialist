@@ -24,9 +24,9 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 15 | [Revising Taints and Tolerations][PlDo] |
 | 16 | [Kubelet Security][PlDp] |
 | 17 | [Verifying Platform Binaries][PlDq] |
-| 16 | [Kubelet Security][PlDp] |
-| 17 | [Practical - Ingress Resource][PlDq] |
-| 18 | [Practical - Ingress Controller][PlDq] |
+| 17 | [Practical - Ingress Resource][PlDr] |
+| 18 | [Practical - Ingress Controller][PlDs] |
+| 19 | [Ingress Security][PlDt] |
 
    [PlDa]: <./install-etcd.md>
    [PlDb]: <./configure-ca.md>
