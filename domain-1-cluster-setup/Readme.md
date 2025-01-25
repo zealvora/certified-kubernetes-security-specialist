@@ -41,7 +41,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDk]: <./authorization.md>
    [PlDl]: <./encryption-provider.md>
    [PlDm]: <./audit-logs.md>
-   [PlDn]: <./kubeadm.md>
+   [PlDn]: <./kubeadm-install.md>
    [PlDo]: <./taint-toleration.md>
    [PlDp]: <./kubelet-security.md >
    [PlDq]: <./verify-binaries.md>
