@@ -2,6 +2,14 @@
 
 https://kubernetes.io/docs/concepts/services-networking/ingress/
 
+### Step 1 - Create Basic Pod and Service
+
+kubectl run example-pod --image=nginx
+
+kubectl expose pod example-pod --name example-service --port=80 --target-port=80
+
+kubectl get service
+
 #### Step 1 - Create Self Signed Certificate for Domain:
 ```sh
 mkdir ingress
@@ -10,8 +18,8 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ingress.key -out ing
 ```
 #### Step 2 - Create Kubernetes TLS based secret :
 ```sh
-kubectl create secret tls tls-cert --key ingress.key --cert ingress.crt
-kubectl get secret tls-cert -o yaml
+kubectl create secret tls tls-certificate --key ingress.key --cert ingress.crt
+kubectl get secret tls-certificate -o yaml
 ```
 #### Step 3 - Create Kubernetes Ingress with TLS:
 ```sh
