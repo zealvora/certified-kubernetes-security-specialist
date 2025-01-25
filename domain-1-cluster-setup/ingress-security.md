@@ -19,28 +19,28 @@ kubectl get pods -n ingress-nginx
 kubectl get service -n ingress-nginx
 ```
 
-#### Step 3 - Create Self Signed Certificate for Domain:
+### Step 3 - Create Self Signed Certificate for Domain:
 ```sh
 mkdir /root/ingress
 cd /root/ingress
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ingress.key -out ingress.crt -subj "/CN=example.internal/O=security"
 ```
 
-#### Step 3 - Verify the Default TLS Certificate
+### Step 4 - Verify the Default TLS Certificate
 Use the NodePort associated with TLS
 ```sh
 curl -kv <IP>:NodePort 
 ```
-#### Step 2 - Create Kubernetes TLS based secret :
+### Step 5 - Create Kubernetes TLS based secret :
 ```sh
 kubectl create secret tls tls-certificate --key ingress.key --cert ingress.crt
 kubectl get secret tls-certificate -o yaml
 ```
-#### Step 3 - Create Kubernetes Ingress with TLS:
+### Step 6 - Create Kubernetes Ingress with TLS:
 ```sh
 kubectl create ingress demo-ingress --class=nginx --rule=example.internal/*=example-service:80,tls=tls-certificate
 ```
-#### Step 4 - Make a request to Controller:
+### Step 7 - Make a request to Controller:
 ```sh
 kubectl get service -n ingress-nginx
 ```
