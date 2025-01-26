@@ -9,6 +9,8 @@ kubectl run example-pod --image=nginx
 kubectl expose pod example-pod --name example-service --port=80 --target-port=80
 
 kubectl get service
+
+kubectl describe service example-service
 ```
 ### Step 2 - Configure Nginx Ingress Controller
 ```sh
@@ -17,6 +19,7 @@ kubectl create -f https://raw.githubusercontent.com/zealvora/certified-kubernete
 kubectl get pods -n ingress-nginx
 
 kubectl get service -n ingress-nginx
+
 ```
 
 ### Step 3 - Create Self Signed Certificate for Domain:
@@ -44,7 +47,16 @@ kubectl create ingress demo-ingress --class=nginx --rule=example.internal/*=exam
 ```sh
 kubectl get service -n ingress-nginx
 ```
-Add the /etc/hosts entry for mapping before running this command
+Add the `/etc/hosts` entry for mapping before running this command
 ```sh
 curl -kv https://example.internal:31893
+```
+### Step 8 - Delete All Resources 
+```sh
+kubectl delete pod nginx-pod
+kubectl delete service example-service
+kubectl delete ingress demo-ingress
+kubectl delete secret tls-certificate
+
+kubectl delete -f https://raw.githubusercontent.com/zealvora/certified-kubernetes-security-specialist/refs/heads/main/domain-1-cluster-setup/nginx-controller.yaml
 ```
