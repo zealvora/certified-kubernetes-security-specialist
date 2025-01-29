@@ -42,5 +42,7 @@ systemctl status etcd
 ```sh
 journalctl -u etcd
 
+journalctl -u etcd | less
+
 systemctl restart systemd-journald.service
 ```
