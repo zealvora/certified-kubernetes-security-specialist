@@ -1,6 +1,6 @@
 # Domain - Core Concepts
 
-The code mentioned in this document are used in the Certified Kubernetes Security Specialist 2023 video course.
+The code mentioned in this document are used in the Certified Kubernetes Security Specialist video course.
 
 # Video-Document Mapper
 
@@ -11,18 +11,15 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 3 | [Configuring containerd and runc][PlDc]
 | 4 | [Container Runtime Interface][PlDd]
 | 5 | [Implementing RunTimeClass - gVisor][PlDe] |
-| 6 | [Kubeadm and Calcio][PlDf] |
-| 7 | [Understanding Network Policies - Part 01][PlDg] |
-| 8 | [Understanding Network Policies - Part 02][PlDh] |
+| 6 | [Structure of Network Policy][PlDf] |
+| 7 | [Practical - Network Policies][PlDg] |
+| 8 | [Network Policies - Except, Port and Protocol][PlDh] |
 
-
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/apparmor.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/apparmor-k8s.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/oci.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/kubeadm-containerd.md>
-
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/gvisor.md>
-
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/kubeadm-calico.md>
-   [PlDg]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/netpol.md>
-   [PlDh]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-4-system-hardening/netpol-02.md>
+   [PlDa]: <./apparmor.md>
+   [PlDb]: <./apparmor-k8s.md>
+   [PlDc]: <./oci.md>
+   [PlDd]: <./kubeadm-containerd.md>
+   [PlDe]: <./gvisor.md>
+   [PlDf]: <./netpol-01.md>
+   [PlDg]: <./netpol-practical.md>
+   [PlDh]: <./netpol-02.md>
