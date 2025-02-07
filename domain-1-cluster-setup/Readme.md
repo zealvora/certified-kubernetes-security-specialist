@@ -7,8 +7,8 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Configuring ETCD Binaries][PlDa] |
-| 2 | [Overview of Certificate Authority][PlDb] |
+| 1 | [Configure etcd Binaries][PlDa] |
+| 2 | [Configure Certificate Authority][PlDb] |
 | 3 | [In-Transit Encryption with HTTPS][PlDc]
 | 4 | [Client Authentication in ETCD][PlDd] |
 | 5 | [Integrating Systemd with ETCD][PlDe] |
