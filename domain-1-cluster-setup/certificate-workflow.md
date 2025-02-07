@@ -18,3 +18,9 @@ openssl x509 -in zeal.crt -text -noout
 openssl verify -CAfile ca.crt zeal.crt
 ```
 
+### Step 4 - Delete the Certificates
+```sh
+rm -f zeal.crt zeal.key zeal.csr
+
+openssl verify -CAfile ca.crt zeal.crt
+```
