@@ -1,4 +1,4 @@
-#### Step 1 - Generate Client Certificate and Client Key:
+#### Step 1 - Generate Client CSR and Client Key:
 ```sh
 cd /root/certificates
 ```
