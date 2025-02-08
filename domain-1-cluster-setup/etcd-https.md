@@ -1,14 +1,15 @@
 
-#### Step 1 - Install utilities
+#### Pre-Requisite: Install Network Utilities
 ```sh
 apt-get -y install tcpdump net-tools
 ```
 
-#### Step 2 - Capture Plain Text ETCD Traffic
+#### Step 1 - Capture Plain Text ETCD Traffic
 
 First tab:
 ```sh
 cd /tmp
+
 etcd
 ```
 Second tab:
@@ -18,20 +19,20 @@ tcpdump -i lo -X  port 2379
 Third tab:
 ```sh
 etcdctl put course "cks"
+
 etcdctl get course
 ```
-#### Step 2 - Creating the ETCD Certificate Key:
+#### Step 2 - Creating the etcd  Key:
 ```sh
 cd /root/certificates
+
 openssl genrsa -out etcd.key 2048
 ```
-#### Step 3 - Find the IP of your server
 
-```sh
-ifconfig
-```
+#### Step 3 - Creating Configuration for etcd CSR:
 
-#### Step 4 - Creating Configuration for ETCD CSR:
+Replace the IP.1 with your Server IP
+
 ```sh
 cat > etcd.cnf <<EOF
 [req]
@@ -51,29 +52,25 @@ EOF
 ```sh
 openssl req -new -key etcd.key -subj "/CN=etcd" -out etcd.csr -config etcd.cnf
 ```
-#### Step 4 - Signing CSR with Certificate Authority Certificate:
+#### Step 5 - Sign etcd CSR with Certificate Authority Certificate:
 ```sh
-openssl x509 -req -in etcd.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out etcd.crt -extensions v3_req -extfile etcd.cnf -days 1000
+openssl x509 -req -in etcd.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out etcd.crt -extensions v3_req -extfile etcd.cnf -days 2000
 ```
 
-#### Step 5 - Start ETCD Server with Certificates:
+#### Step 6 - Start Etcd Server with HTTPS:
 ```sh
 etcd --cert-file=/root/certificates/etcd.crt --key-file=/root/certificates/etcd.key --advertise-client-urls=https://127.0.0.1:2379 --listen-client-urls=https://127.0.0.1:2379
 ```
 
-#### Step 6 - Verify
+#### Step 7 - Verification 
+Below command should not work.
 ```sh
 etcdctl put course "cks"
 ```
 
-#### Run TCPDUMP to capture Traffic:
+#### Step 8 - Store and Fetch Data by skipping TLS Verification
 ```sh
-tcpdump -i lo -X  port 2379
-```
+etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify --insecure-transport=false put course "cks"
 
-#### Step 6 - 
-```sh
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false put course "cks"
-
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false get course
+etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify --insecure-transport=false get course
 ```

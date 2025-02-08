@@ -10,7 +10,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 1 | [Configure etcd Binaries][PlDa] |
 | 2 | [Configure Certificate Authority][PlDb] |
 | 3 | [Workflow - Issuance of Signed Certificates][PlDb] |
-| 4 | [In-Transit Encryption with HTTPS][PlDc]
+| 4 | [Etcd - Transport Security with HTTPS][PlDc]
 | 5 | [Client Authentication in ETCD][PlDd] |
 | 6 | [Integrating Systemd with ETCD][PlDe] |
 | 7 | [Configuring API Server][PlDf] |
@@ -25,14 +25,14 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 16 | [Revising Taints and Tolerations][PlDo] |
 | 17 | [Kubelet Security][PlDp] |
 | 18 | [Verifying Platform Binaries][PlDq] |
-| 19 | [Practical - Ingress Resource][PlDr] |
+| 19 | [Prasctical - Ingress Resource][PlDr] |
 | 20 | [Practical - Ingress Controller][PlDs] |
 | 21 | [Ingress Security][PlDt] |
 
    [PlDa]: <./install-etcd.md>
    [PlDb]: <./configure-ca.md>
    [PlDba]: <./certificate-workflow.md>
-   [PlDc]: <./etcd-transit-encryption.md>
+   [PlDc]: <./etcd-https.md>
    [PlDd]: <./etcd-client-auth.md>
    [PlDe]: <./etcd-systemd.md>
    [PlDf]: <./configure-apiserver.md>

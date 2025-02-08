@@ -18,6 +18,7 @@ cp etcd etcdctl /usr/local/bin/
 ```
 #### Step 3: Start etcd
 ```sh
+cd /tmp
 etcd
 ```
 
