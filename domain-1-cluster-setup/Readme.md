@@ -11,7 +11,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 2 | [Configure Certificate Authority][PlDb] |
 | 3 | [Workflow - Issuance of Signed Certificates][PlDb] |
 | 4 | [etcd - Transport Security with HTTPS][PlDc]
-| 5 | [Client Authentication in etcd][PlDd] |
+| 5 | [Practical - Mutual TLS Authentication][PlDd] |
 | 6 | [Integrating Systemd with etcd][PlDe] |
 | 7 | [Configuring API Server][PlDf] |
 | 8 | [Transport Security for API Server][PlDg] |
@@ -33,7 +33,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDb]: <./configure-ca.md>
    [PlDba]: <./certificate-workflow.md>
    [PlDc]: <./etcd-https.md>
-   [PlDd]: <./etcd-client-auth.md>
+   [PlDd]: <./mutual-tls.md>
    [PlDe]: <./etcd-systemd.md>
    [PlDf]: <./configure-apiserver.md>
    [PlDg]: <./apiserver-transit-encryption.md>  
