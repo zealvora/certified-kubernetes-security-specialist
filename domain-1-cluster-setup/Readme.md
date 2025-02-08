@@ -10,7 +10,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 1 | [Configure etcd Binaries][PlDa] |
 | 2 | [Configure Certificate Authority][PlDb] |
 | 3 | [Workflow - Issuance of Signed Certificates][PlDb] |
-| 4 | [In-Transit Encryption with HTTPS][PlDc]
+| 4 | [Etcd - Transport Security with HTTPS][PlDc]
 | 5 | [Client Authentication in ETCD][PlDd] |
 | 6 | [Integrating Systemd with ETCD][PlDe] |
 | 7 | [Configuring API Server][PlDf] |
