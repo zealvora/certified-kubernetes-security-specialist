@@ -1,12 +1,12 @@
 
-#### Step 1: Create Data Directory for ETCD
+#### Step 1: Create Data Directory for etcd
 
 ```sh
 mkdir /var/lib/etcd
 chmod 700 /var/lib/etcd
 ```
 
-#### Step 2: Created Systemd file for ETCD
+#### Step 2: Create Systemd file for etcd
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/etcd.service
 [Unit]
@@ -29,18 +29,18 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-#### Step 3: Start ETCD
+#### Step 3: Start etcd
 ```sh
 systemctl start etcd
+
+systemctl enable etcd
 ```
 #### Step 4: Verify the status
 ```sh
 systemctl status etcd
 ```
 
-#### Step 5: Check ETCD Logs
+#### Step 5: Check etcd Logs
 ```sh
 journalctl -u etcd
-
-systemctl restart systemd-journald.service
 ```
