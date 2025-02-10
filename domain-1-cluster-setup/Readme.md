@@ -1,6 +1,6 @@
 # Domain 1 - Cluster Setup
 
-The code mentioned in this document are used in the Certified Kubernetes Security Specialist 2023 course.
+The code mentioned in this document are used in the Certified Kubernetes Security Specialist 2025 course.
 
 
 # Video-Document Mapper
@@ -28,6 +28,9 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 19 | [Prasctical - Ingress Resource][PlDr] |
 | 20 | [Practical - Ingress Controller][PlDs] |
 | 21 | [Ingress Security][PlDt] |
+| 22 | [Structure of Network Policy][PlDu] |
+| 23 | [Practical - Network Policies][PlDv] |
+| 24 | [Network Policies - Except, Port and Protocol][PlDw] |
 
    [PlDa]: <./install-etcd.md>
    [PlDb]: <./configure-ca.md>
@@ -50,3 +53,6 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDr]: <./ingress.md >
    [PlDs]: <./ingress-controller.md>
    [PlDt]: <./ingress-security.md>
+   [PlDu]: <./netpol-structure.md>
+   [PlDv]: <./netpol-practical.md>
+   [PlDw]: <./netpol-02.md>

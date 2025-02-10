@@ -1,11 +1,19 @@
-
-#### Step 1 Make a request to Kubelet API:
+#### Step 1: Access Worker Node Kubelet from Control Plane Node
+```sh
+cd /etc/kubernetes/pki
+```
+Change the IP address in below command to that of Worker Node IP
+```sh
+curl -k --cert apiserver-kubelet-client.crt --key apiserver-kubelet-client.key https://143.244.140.236:10250/pods
+```
+#### Step 2 Make a request to Kubelet API (Worker Node)
 ```sh
 apt install net-tools
 netstat -ntlp
 curl -k -X GET https://localhost:10250/pods
 ```
-#### Step 2 Modify the Kubelet Configuration file:
+
+#### Step 2 Modify the Kubelet Configuration file: (Worker Node)
 ```sh
 cd /var/lib/kubelet
 cp config.yaml config.yaml.bak
@@ -21,11 +29,11 @@ systemctl restart kubelet
 systemctl status kubelet
 ```
 
-#### Step 3 Make Request to Kubelet API:
+#### Step 3 Make Request to Kubelet API: (Worker Node)
 ```sh
 curl -k -X GET https://localhost:10250/pods
 ```
-#### Step 4 Download kubeletctl:
+#### Step 4 Download kubeletctl: (Worker Node)
 
 ##### GitHub Repo
 
@@ -40,7 +48,11 @@ kubeletctl pods -i
 kubeletctl run "whoami" --all-pods -i
 ```
 
-#### Step 5 Verify the certificate of the kubelet for node authorizer group:
+#### Step 5: Verify Kubelet Certificate
+
+Change the IP address in below command to that of Worker Node IP
+
+
 ```sh
-openssl x509 -in  /var/lib/kubelet/pki/kubelet-client-current.pem -text -noout
+openssl s_client -showcerts -connect 143.244.140.236:10250 2>/dev/null | openssl x509 -inform pem -noout -text
 ```

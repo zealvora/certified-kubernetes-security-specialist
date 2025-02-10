@@ -35,7 +35,7 @@ kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/ce
 cd /root/certificates
 openssl genrsa -out bob.key 2048
 openssl req -new -key bob.key -subj "/CN=bob/O=system:masters" -out bob.csr
-openssl x509 -req -in bob.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out bob.crt -extensions v3_req  -days 1000
+openssl x509 -req -in bob.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out bob.crt -days 1000
 ```
 #### Step 4 Verification:
 
