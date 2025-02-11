@@ -39,7 +39,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDd]: <./mutual-tls.md>
    [PlDe]: <./etcd-systemd.md>
    [PlDf]: <./configure-apiserver.md>
-   [PlDg]: <./apiserver-transit-encryption.md>  
+   [PlDg]: <./apiserver-https.md>  
    [PlDh]: <./token-authentication.md>
    [PlDi]: <./downside-token-auth.md>
    [PlDj]: <./certificate-auth-k8s.md>
