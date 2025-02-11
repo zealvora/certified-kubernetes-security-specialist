@@ -15,7 +15,7 @@ kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/ce
 cd /root/certificates
 ```
 ```sh
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert ./apiserver.crt --key ./apiserver.key get /registry/secrets/default/new-secret | hexdump -C
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert ./api-etcd.crt --key ./api-etcd.key get /registry/secrets/default/new-secret | hexdump -C
 ```
 ```sh
 cd /var/lib/etcd
@@ -71,7 +71,7 @@ kubectl get secret --server=https://127.0.0.1:6443 --client-certificate /root/ce
 
 ```sh
 cd /root/certificates
-ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert ./apiserver.crt --key ./apiserver.key get /registry/secrets/default/db-secret | hexdump -C
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --insecure-skip-tls-verify  --insecure-transport=false --cert ./api-etcd.crt --key ./api-etcd.key get /registry/secrets/default/db-secret | hexdump -C
 ```
 ```sh
 cd /var/lib/etcd

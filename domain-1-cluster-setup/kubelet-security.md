@@ -40,7 +40,7 @@ curl -k -X GET https://localhost:10250/pods
 https://github.com/cyberark/kubeletctl
 
 ```sh
-curl -LO https://github.com/cyberark/kubeletctl/releases/download/v1.6/kubeletctl_linux_amd64 && chmod a+x ./kubeletctl_linux_amd64 && mv ./kubeletctl_linux_amd64 /usr/local/bin/kubeletctl
+wget https://github.com/cyberark/kubeletctl/releases/download/v1.13/kubeletctl_linux_amd64 && chmod a+x ./kubeletctl_linux_amd64 && mv ./kubeletctl_linux_amd64 /usr/local/bin/kubeletctl
 ```
 
 ```sh
@@ -50,9 +50,6 @@ kubeletctl run "whoami" --all-pods -i
 
 #### Step 5: Verify Kubelet Certificate
 
-Change the IP address in below command to that of Worker Node IP
-
-
 ```sh
-openssl s_client -showcerts -connect 143.244.140.236:10250 2>/dev/null | openssl x509 -inform pem -noout -text
+openssl s_client -showcerts -connect 127.0.0.1:10250 2>/dev/null | openssl x509 -inform pem -noout -text
 ```
