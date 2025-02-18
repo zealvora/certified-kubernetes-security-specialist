@@ -32,7 +32,9 @@ apt-cache madison kubectl
 RUN the below command CONTROL PLANE NODE. Replace `node01` with appropriate worker node name
 ```sh
 kubectl drain node01 --ignore-daemonsets
-
+```
+Following commands will run on worker node 
+```sh
 apt-get install -y kubelet="1.32.2-1.1*" kubectl="1.32.2-1.1"
 
 sudo systemctl daemon-reload
