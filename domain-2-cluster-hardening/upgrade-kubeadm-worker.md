@@ -28,14 +28,22 @@ kubeadm upgrade node
 apt-cache madison kubelet
 
 apt-cache madison kubectl
-
-kubectl drain node01 --ignore-daemonsets --delete-local-data [RUN ON CONTROL PLANE NODE]
+```
+RUN the below command CONTROL PLANE NODE. Replace `node01` with appropriate worker node name
+```sh
+kubectl drain node01 --ignore-daemonsets
 
 apt-get install -y kubelet="1.32.2-1.1*" kubectl="1.32.2-1.1"
 
 sudo systemctl daemon-reload
 
 sudo systemctl restart kubelet
+```
 
-kubectl uncordon node01 [RUN ON CONTROL PLANE NODE]
+#### Verification: (Run in Control Plane Node)
+
+RUN the below command CONTROL PLANE NODE. Replace `node01` with appropriate worker node name
+```sh
+kubectl uncordon node01 
+kubectl get nodes
 ```
