@@ -17,7 +17,7 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
 
 
-   [PlDa]: <./token-rbac.md>
+   [PlDa]: <./user-rbac.md>
    [PlDb]: <./role-rolebinding.md>
    [PlDc]: <./clusterrole.md>
    [PlDd]: <./service-account.md>
