@@ -1,82 +1,25 @@
-#### Step 0 - Create Namespace:
+
+#### Create ClusterRole
 ```sh
-kubectl create namespace development
-kubectl create namespace production
+kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods
+
+kubectl describe clusterrole pod-reader
 ```
-#### Step 1 - Create Cluster Role:
+#### Create ClusterRoleBinding
 ```sh
-nano clusterrole.yaml
+kubectl create clusterrolebinding test-clusterrole --clusterrole=pod-reader --user=system:serviceaccount:default:test-sa
+
+kubectl describe clusterrolebinding test-clusterrole
 ```
+#### Test the Setup
+
+Replace the URL in below command to your K8s URL. If using macOS or Linux, use `$TOKEN` instead of `%TOKEN%`
+
 ```sh
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: cluster-pod-reader
-rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "watch", "list","create"]
-- apiGroups: [""]
-  resources: ["pods/exec"]
-  verbs: ["create"]
-  ```
-```sh
-kubectl apply -f clusterrole.yaml
-```
-```sh
-kubectl get clusterrole
+curl -k https://38140ecd-e8d7-4fff-be52-24629c40cdac.k8s.ondigitalocean.com/api/v1/namespaces/default/pods --header "Authorization: Bearer %TOKEN%"
 ```
 
-#### Step 2 - Create Cluster Role Binding:
 ```sh
-nano clusterrolebinding.yaml
+curl -k https://38140ecd-e8d7-4fff-be52-24629c40cdac.k8s.ondigitalocean.com/api/v1/namespaces/kube-system/pods --header "Authorization: Bearer %TOKEN%"
 ```
-```sh
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: read-pods-global
-subjects:
-- kind: User
-  name: john
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: ClusterRole
-  name: cluster-pod-reader
-  apiGroup: rbac.authorization.k8s.io
-```
-```sh
-kubectl apply -f clusterrolebinding.yaml
-```
-#### Step 3 - Verification:
-```sh
-su - john
-kubectl run john-pod-dev --image=nginx -n development
-kubectl exec -it -n development john-pod-dev -- bash
-```
-#### Step 4 - RoleBinding to ClusterRole:
-```sh
-kubectl delete -f clusterrolebinding.yaml
-```
-```sh
-nano rolebind-cluster.yaml
-```
-```sh
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: dev-pods
-  namespace: development
-subjects:
-- kind: User
-  name: john
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: ClusterRole
-  name: cluster-pod-reader
-  apiGroup: rbac.authorization.k8s.io
-```
-```sh
-kubectl apply -f rolebind-cluster.yaml
-kubectl exec -it -n development john-pod-dev -- bash
-```
+

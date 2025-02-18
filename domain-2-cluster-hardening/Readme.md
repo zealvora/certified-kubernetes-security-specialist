@@ -7,24 +7,20 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Creating User for RBAC][PlDa] |
-| 2 | [Role Based Access Controls (RBAC)][PlDb] |
-| 3 | [ClusterRole and ClusterRoleBinding][PlDc]
-| 4 | [Creating Ingress and Ingress Controller][PlDd]
-| 4 | [Ingress Security][PlDe] |
-| 5 | [Overview of Service Accounts][PlDf] |
-| 6 | [Service Accounts - Points to Note][PlDg] |
-| 7 | [Service Account Security][PlDh] |
-| 8 | [Upgrading kudeadm Clusters][PlDi] |
+| 1 | [Creating Token for RBAC Practicals][PlDa] |
+| 2 | [Practical - Role and RoleBinding][PlDb] |
+| 3 | [Practical - ClusterRole and ClusterRoleBinding][PlDc]
+| 5 | [Overview of Service Accounts][PlDd] |
+| 6 | [Service Accounts - Points to Note][PlDe] |
+| 7 | [Service Account Security][PlDf] |
+| 8 | [Upgrading kudeadm Clusters][PlDg] |
 
 
 
-   [PlDa]: <./user-rbac.md>
-   [PlDb]: <./rbac.md>
+   [PlDa]: <./token-rbac.md>
+   [PlDb]: <./role-rolebinding.md>
    [PlDc]: <./clusterrole.md>
-   [PlDd]: <./deploying-ingress.md>
-   [PlDe]: <./ingress-security.md>
-   [PlDf]: <./service-account.md>
-   [PlDg]: <./sa-pointers.md>
-   [PlDh]: <./sa-security.md>
-   [PlDi]: <./kubeadm-version.md>
+   [PlDd]: <./service-account.md>
+   [PlDe]: <./sa-pointers.md>
+   [PlDf]: <./sa-security.md>
+   [PlDg]: <./kubeadm-version.md>
