@@ -88,5 +88,6 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane- || true
 echo "[Step 6] Installing Calico network addon..."
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
+sleep 20
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
 
