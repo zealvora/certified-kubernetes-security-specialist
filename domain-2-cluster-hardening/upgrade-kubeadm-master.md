@@ -1,3 +1,7 @@
+Documentation Referenced:
+
+https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
+
 #### Verify Current Version of kubeadm
 ```sh
 kubeadm version
