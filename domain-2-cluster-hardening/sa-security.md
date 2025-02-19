@@ -5,16 +5,12 @@ https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-accou
 #### Authenticating with Token:
 ```sh
 kubectl run pod-1 --image=nginx
-
 kubectl exec -it pod-1 -- bash
 ```
 ```sh
 cat /var/run/secrets/kubernetes.io/serviceaccount/token
-
 TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
-
 echo $TOKEN
-
 curl -k -H "Authorization: Bearer $TOKEN" "https://kubernetes/api/v1"
 
 curl -k -H "Authorization: Bearer $TOKEN" "https://kubernetes/api/v1/namespaces"
@@ -65,28 +61,7 @@ kubectl exec -it demo-pod -- bash
 
 cat /var/run/secrets/kubernetes.io/serviceaccount/token
 ```
-### Dealing with Clash Situation
-
-
-pod-4.yaml
-
+#### Delete the resources created
 ```sh
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-4
-spec:
-  automountServiceAccountToken: true
-  containers:
-  - image: nginx
-    name: demo-pod
-```
-```sh
-kubectl apply -f pod-4.yaml
-```
-
-```sh
-kubectl exec -it pod-4 -- bash
-
-cat /var/run/secrets/kubernetes.io/serviceaccount/token
+kubectl delete pods --all
 ```
