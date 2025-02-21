@@ -1,0 +1,79 @@
+### Documentation Referenced:
+
+https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-capabilities-for-a-container
+
+#### Create Normal Pod 
+```sh
+kubectl run normal-pod --image=busybox -- sleep 36000
+
+kubectl exec -it normal-pod -- sh
+```
+
+#### Check Capabilities
+```sh
+cat /proc/1/status
+
+capsh --decode=<capabilities-here>
+```
+
+#### Capability 1 Pod
+
+```sh
+capability-1.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: capabilities-pod-1
+spec:
+ containers:
+ - name: demo
+   image: busybox
+   command: ["sleep","36000"]
+   securityContext:
+      capabilities:
+        add: ["NET_ADMIN", "SYS_TIME"]
+```
+```sh
+kubectl apply -f capability-1.yaml
+
+kubectl exec -it capabilities-pod-1 -- sh
+```
+```sh
+cat /proc/1/status
+
+capsh --decode=<capabilities-here>
+```
+
+#### Capability 2 Pod
+
+```sh
+capability-2.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: capabilities-pod-2
+spec:
+ containers:
+ - name: demo-2
+   image: busybox
+   command: ["sleep","36000"]
+   securityContext:
+      capabilities:
+        add: ["NET_ADMIN", "SYS_TIME"]
+        drop:
+        - ALL
+```
+```sh
+kubectl apply -f capability-2.yaml
+
+kubectl exec -it capabilities-pod-2 -- sh
+```
+```sh
+cat /proc/1/status
+
+capsh --decode=<capabilities-here>
+```

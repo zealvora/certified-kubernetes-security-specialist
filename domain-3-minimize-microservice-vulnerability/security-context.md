@@ -1,0 +1,127 @@
+### Documentation Referenced:
+
+https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+
+### Example 1 - Insecure Pod
+
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: insecure-pod
+spec:
+ containers:
+ - name: demo-container
+   image: busybox:latest
+   command: ["sleep", "36000"]
+   volumeMounts:
+    - name: host-root
+      mountPath: /host
+ volumes:
+  - name: host-root
+    hostPath:
+      path: /  
+```
+```sh
+kubectl apply -f pod.yaml
+
+kubectl get pods
+```
+```sh
+kubectl exec -it insecure-pod -- sh
+id
+cd /host
+ls
+cd /boot
+ls -l 
+```
+```sh
+kubectl delete pod insecure-pod
+```
+### Example - Controlled Pod
+```sh
+pod-controlled.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: controlled-pod
+spec:
+ securityContext:
+   runAsUser: 1000
+   runAsGroup: 2000
+   fsGroup: 3000
+ containers:
+ - name: demo-container
+   image: busybox:latest
+   command: ["sleep", "36000"]
+   volumeMounts:
+    - name: host-root
+      mountPath: /host
+ volumes:
+  - name: host-root
+    hostPath:
+      path: /  
+```
+```sh
+kubectl apply -f pod-controlled.yaml
+```
+
+```sh
+kubectl get pods
+kubectl exec -it controlled-pod -- sh
+id
+cd /host
+ls
+cd /boot
+cd grub
+vi grub.cfg
+```
+#### Verify UID, GID, fsGroup
+```sh
+cd /host/tmp
+touch test.txt
+ls -ls
+```
+### Example 3 - fsGroup Pod
+```sh
+pod-fs.yaml
+```
+```sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsgroup-pod
+spec:
+ securityContext:
+   runAsUser: 1000
+   runAsGroup: 2000
+   fsGroup: 3000
+ volumes:
+  - name: host-root
+    emptyDir: {}
+ containers:
+ - name: demo-container
+   image: busybox:latest
+   command: ["sleep", "36000"]
+   volumeMounts:
+    - name: host-root
+      mountPath: /host
+```
+```sh
+kubectl apply -f pod-fs.yaml
+```
+#### Verify UID, GID, fsGroup
+```sh
+kubectl exec -it fsgroup-pod -- sh
+id
+cd /host
+touch test.txt
+ls -l
+```
+
+### Delete all the Pods after practical
+```sh
+kubectl delete pods --all
+```
