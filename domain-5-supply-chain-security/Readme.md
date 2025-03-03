@@ -10,9 +10,11 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 1 | [Scan images for known vulnerabilities][PlDa] |
 | 2 | [Scanning K8s Clusters for Security Best Practices][PlDb] |
 | 3 | [Static Analysis][PlDc] |
+| 4 | [Dockerfile - Security Best Practices][PlDd] |
+| 5 | [Securing Docker Daemon][PlDe] |
 
-
-
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/trivy.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/kube-bench.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-5-supply-chain-security/static-analysis.md>
+   [PlDa]: <./trivy.md>
+   [PlDb]: <./kube-bench.md>
+   [PlDc]: <./static-analysis.md>
+   [PlDd]: <./dockerfile-best-practice.md>
+   [PlDe]: <./docker-security.md>
