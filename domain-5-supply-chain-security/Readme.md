@@ -12,9 +12,11 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 3 | [Static Analysis][PlDc] |
 | 4 | [Dockerfile - Security Best Practices][PlDd] |
 | 5 | [Securing Docker Daemon][PlDe] |
+| 6 | [SBOM Practical][PlDf] |
 
    [PlDa]: <./trivy.md>
    [PlDb]: <./kube-bench.md>
    [PlDc]: <./static-analysis.md>
    [PlDd]: <./dockerfile-best-practice.md>
    [PlDe]: <./docker-security.md>
+   [PlDf]: <./sbom.md>
