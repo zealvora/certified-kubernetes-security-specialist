@@ -1,7 +1,4 @@
 
-### Install Docker
-
-
 ### Generate CA Key and Certificate
 ```sh
 mkdir -p /etc/docker/certs

@@ -1,3 +1,6 @@
+### Documentation Referred:
+
+https://kubernetes.io/docs/concepts/storage/projected-volumes/
 
 ### Create Secret and ConfigMap
 
@@ -37,3 +40,12 @@ spec:
             - key: config-key
               path: my-config
 ```
+```sh
+kubectl delete -f projected-volume.yaml
+```
+
+```sh
+kubectl exec -it volume-test -- sh
+
+cd /projected-volume
+

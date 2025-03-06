@@ -1,3 +1,7 @@
+### Documentation Referred:
+
+https://kubernetes.io/docs/concepts/storage/projected-volumes/#serviceaccounttoken
+
 ### Create ServiceAccount with Automount False
 ```sh
 kubectl create namespace test-ns
@@ -49,7 +53,6 @@ cat /service-account/token
 
 ```sh
 kubectl delete -f sa-example-1-yaml
-kubectl delete pod pod-sa
 ```
 ### Mount Custom Service Account
 ```sh
@@ -106,6 +109,7 @@ ls -l /service-account
 cat /service-account/token
 ```
 
+### Delet the Resources created
 ```sh
 kubectl delete ns test-ns
 ```
