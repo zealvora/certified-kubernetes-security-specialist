@@ -12,15 +12,13 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 3 | [Creating Custom Falco Rules][PlDc]
 | 4 | [Falco Rule Writing - Exam Perspective][PlDd]
 | 5 | [Audit Logging][PlDe] |
-| 6 | [Container Immutability][PlDf] |
 
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/install-falco.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/sysdig.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/custom-falco-rules.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/falco-exam-perspective.md>
 
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/audit-log-detailed.md>
+   [PlDa]: <./install-falco.md>
+   [PlDb]: <./sysdig.md>
+   [PlDc]: <./custom-falco-rules.md>
+   [PlDd]: <./falco-exam-perspective.md>
+   [PlDe]: <./audit-log-detailed.md>
 
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/blob/master/domain-6-monitor-log-runtimesec/immutability.md>

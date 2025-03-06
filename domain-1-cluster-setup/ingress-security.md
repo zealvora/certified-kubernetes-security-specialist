@@ -51,7 +51,11 @@ Add the `/etc/hosts` entry for mapping before running this command
 ```sh
 curl -kv https://example.internal:31893
 ```
+
+## Don't delete the resources created for this practical. We will need it in the next video. 
 ### Step 8 - Delete All Resources 
+
+ALERT: Don't delete the resources created in this practical. It will be used in the next video.
 ```sh
 kubectl delete pod nginx-pod
 kubectl delete service example-service

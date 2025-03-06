@@ -20,5 +20,5 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
    [PlDc]: <./static-analysis.md>
    [PlDd]: <./dockerfile-best-practice.md>
    [PlDe]: <./docker-security.md>
-   [PlDe]: <./docker-tls.md>
+   [PlDf]: <./docker-tls.md>
    [PlDg]: <./sbom.md>
