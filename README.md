@@ -1,24 +1,15 @@
-# Certified Kubernetes Security Specialist - KPLABS Course
+# Certified Kubernetes Security Specialist 2025
 
-This is a central document which contains all the commands and code files used throughout the video course.
+This Git repository contains all the commands and code files used throughout the CKS video course by Zeal Vora
 
-# Video-Document Mapper
+We also have a new Discord community for any support related discussion as well as to connect to other students doing the same course. Feel free to join the community.
 
-| Domain | Document Link |
-| ------ | ------ |
-| 1 | [Domain 1 - Cluster Setup][PlDa] |
-| 2 | [Domain 2 - Cluster Hardening][PlDb] |
-| 3 | [Domain 3 - Minimize Microservice Vulnerabilities][PlDc]
-| 4 | [Domain 4 - System Hardening][PlDe] |
-| 5 | [Domain 5 - Supply Chain Security][PlDf] |
-| 6 | [Domain 6 - Monitoring, Logging and Runtime Security][PlDg] |
+```sh
+https://kplabs.in/chat
+```
 
+Welcome to the community again, and we look forward to seeing you certified! :)
 
-
-
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-security-specialist/tree/master/domain-1-cluster-setup>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-security-specialist/tree/master/domain-2-cluster-hardening>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-security-specialist/tree/master/domain-3-minimize-microservice-vulnerability>
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-security-specialist/tree/master/domain-4-system-hardening>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-security-specialist/tree/master/domain-5-supply-chain-security>
-   [PlDg]: <https://github.com/zealvora/certified-kubernetes-security-specialist/tree/master/domain-6-monitor-log-runtimesec>
+<p align="center">
+  <img width="460" height="300" src="https://i.ibb.co/b3jFkkk/discord-terraform.png">
+</p>
