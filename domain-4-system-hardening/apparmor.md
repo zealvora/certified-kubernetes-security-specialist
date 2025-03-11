@@ -1,14 +1,17 @@
 #### Check status of apparmor:
 ```sh
 systemctl status apparmor
+
+aa-status
 ```
 #### Sample Script:
 ```sh
 mkdir /root/apparmor
+
 cd /root/apparmor
 ```
 ```sh
-nano myscript.sh
+nano app.sh
 ```
 ```sh
 #!/bin/bash
@@ -19,26 +22,28 @@ rm -f /tmp/file.txt
 echo "New file removed"
 ```
 ```sh
-chmod +x myscript.sh
+chmod +x app.sh
 ```
 #### Install Apparmor Utils:
 ```sh
-apt install apparmor-utils
+apt install apparmor-utils -y
 ```
 #### Generate a new profile:
 ```sh
-aa-genprof ./myscript.sh
+aa-genprof ./app.sh
 ```
 ```sh
-./myscript.sh (from new tab)
+./app.sh (from new tab)
 ```
 #### Verify the new profile:
 ```sh
-cat /etc/apparmor.d/root.tt.script.sh
+cat /etc/apparmor.d/root.apparmor.app.sh
+
 aa-status
 ```
 #### Disable a profile:
 ```sh
-ln -s /etc/apparmor.d/root.apparmor.myscript.sh /etc/apparmor.d/disable/
-apparmor_parser -R /etc/apparmor.d/root.apparmor.myscript.sh
+ln -s /etc/apparmor.d/root.apparmor.app.sh /etc/apparmor.d/disable/
+
+apparmor_parser -R /etc/apparmor.d/root.apparmor.app.sh
 ```

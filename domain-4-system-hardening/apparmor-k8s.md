@@ -20,18 +20,21 @@ aa-status
 
 #### Sample YAML File based on Host PID:
 ```sh
-cd /root/apparmor
+cd /root
 ```
 ```sh
 nano hello-armor.yaml
+```
 ```sh
 apiVersion: v1
 kind: Pod
 metadata:
   name: hello-apparmor
-  annotations:
-    container.apparmor.security.beta.kubernetes.io/hello: localhost/k8s-apparmor-example-deny-write
 spec:
+  securityContext:
+    appArmorProfile:
+      type: Localhost
+      localhostProfile: k8s-apparmor-example-deny-write
   containers:
   - name: hello
     image: busybox

@@ -6,8 +6,8 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Overview of AppArmor][PlDa] |
-| 2 | [Integration of AppArmor with Kubernetes][PlDb] |
+| 1 | [Practical - AppArmor][PlDa] |
+| 2 | [AppArmor and Kubernetes][PlDb] |
 | 3 | [Configuring containerd and runc][PlDc]
 | 4 | [Container Runtime Interface][PlDd]
 | 5 | [Implementing RunTimeClass - gVisor][PlDe] |
