@@ -17,7 +17,7 @@ ls -l /dev
     (open_read or open_write) and
     fd.name=/dev/mem and container.id != host
   output: >
-    "Container: %container.id and % container.name attempted to access /dev/mem"
+    "Container: %container.id and %container.name attempted to access /dev/mem"
   priority: CRITICAL
 ```
 
