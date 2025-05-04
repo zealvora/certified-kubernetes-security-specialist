@@ -5,12 +5,12 @@ https://kubernetes.io/docs/concepts/storage/projected-volumes/
 ### Create Secret and ConfigMap
 
 ```sh
-kubectl create secret generic  firstsecret --from-literal=dbpassword=mypassword123
+kubectl create secret generic firstsecret --from-literal=dbpassword=mypassword123
 
 kubectl create configmap my-config --from-literal=config-key="This is a config value"
 ```
 
-### Create Pod with Projected Voluem
+### Create Pod with Projected Volume
 ```sh
 apiVersion: v1
 kind: Pod
