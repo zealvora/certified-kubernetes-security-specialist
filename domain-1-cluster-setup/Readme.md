@@ -25,11 +25,11 @@ The code mentioned in this document are used in the Certified Kubernetes Securit
 | 16 | [Revising Taints and Tolerations][PlDp] |
 | 17 | [Kubelet Security][PlDq] |
 | 18 | [Verifying Platform Binaries][PlDr] |
-| 21 | [Practical - Ingress with TLS][PlDs] |
-| 21 | [Ingress Annotation - SSL Redirect][PlDt] |
-| 22 | [Structure of Network Policy][PlDu] |
-| 23 | [Practical - Network Policies][PlDv] |
-| 24 | [Network Policies - Except, Port and Protocol][PlDw] |
+| 19 | [Practical - Ingress with TLS][PlDs] |
+| 20 | [Ingress Annotation - SSL Redirect][PlDt] |
+| 21 | [Structure of Network Policy][PlDu] |
+| 22 | [Practical - Network Policies][PlDv] |
+| 23 | [Network Policies - Except, Port and Protocol][PlDw] |
 
    [PlDa]: <./install-etcd.md>
    [PlDb]: <./configure-ca.md>
