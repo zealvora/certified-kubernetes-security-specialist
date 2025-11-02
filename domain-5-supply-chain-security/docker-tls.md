@@ -71,8 +71,8 @@ nano /etc/hosts
 ```
 Add following line
 ```sh
-127.0.0.1 docker.kplabs.internal
+127.0.0.1 kplabs.docker.internal
 ```
 ```sh
-curl --cert /etc/docker/certs/client-cert.pem --key /etc/docker/certs/client-key.pem --cacert /etc/docker/certs/ca.pem https://docker.kplabs.internal:2376/version
+curl --cert /etc/docker/certs/client-cert.pem --key /etc/docker/certs/client-key.pem --cacert /etc/docker/certs/ca.pem https://kplabs.docker.internal:2376/version
 ```

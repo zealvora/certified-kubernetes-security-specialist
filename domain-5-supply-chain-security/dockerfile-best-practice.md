@@ -6,7 +6,9 @@ nano app.sh
 echo "Hello, Docker"
 ```
 ### Base Dockerfile
-
+```sh
+nano Dockerfile
+```
 ```sh
 FROM ubuntu:18.04
 USER root
@@ -34,7 +36,7 @@ docker run myapp:v1
 echo > Dockerfile
 ```
 ```sh
-FROM ubuntu:24.10
+FROM ubuntu:25.10
 
 RUN apt-get update && \
     apt-get install -y curl && \
@@ -60,6 +62,9 @@ docker run myapp:v2
 ```
 
 ### Revision 2 DockerFile
+```sh
+echo > Dockerfile
+```
 ```sh
 FROM alpine:latest
 WORKDIR /usr/src/app

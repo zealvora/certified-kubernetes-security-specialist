@@ -5,7 +5,7 @@ https://github.com/falcosecurity/falco/blob/0.40.0/falco.yaml
 
 ### Commands Used for Testing
 ```sh
-cp /etc/falco
+cd /etc/falco
 cp falco.yaml falco.yaml.bak
 ```
 ```sh
