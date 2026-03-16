@@ -5,7 +5,7 @@ kubectl run example-pod --image=nginx -l=app=nginx
 ```
 #### Step 2 - Create Service:
 ```sh
-kubectl expose example-pod nginx --port=80 --target-port=80 --name=example-svc
+kubectl expose pod example-pod --port=80 --target-port=80 --name=example-svc
 ```
 #### Step 3 - Installing Ingress Controller:
 ```sh
