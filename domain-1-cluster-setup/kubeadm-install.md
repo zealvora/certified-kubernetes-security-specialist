@@ -99,7 +99,7 @@ Use the `kubeadm join` command that was generated in your Control Plane Node ser
 kubeadm join 209.38.120.248:6443 --token 9vxoc8.cji5a4o82sd6lkqa \
         --discovery-token-ca-cert-hash sha256:1818dc0a5bad05b378dd3dcec2c048fd798e8f6ff69b396db4f5352b63414baf
 ```
-Run the following command in Mater node to ensure that worker node is in Ready status.
+Run the following command in Master node to ensure that worker node is in Ready status.
 
 ```sh
 kubectl get nodes
