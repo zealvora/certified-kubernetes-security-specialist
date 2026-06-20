@@ -20,7 +20,7 @@ cp config.yaml config.yaml.bak
 ```
 
 ```sh
-Set anonymous auth to false
+Set anonymous auth to true
 Authorization Mode to AlwaysAllow
 ```
 
