@@ -9,5 +9,5 @@
 
   #### Step 2 - Verify the Message Digest:
   ```sh
-  sha512sum kubernetes-server-linux-amd64.tar.gz
+  sha512sum kubernetes-client-darwin-arm64.tar.gz
   ```
